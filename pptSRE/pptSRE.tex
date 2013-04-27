@@ -3,7 +3,7 @@
 \usepackage{graphicx}
 \usetheme{Frankfurt}
 
-\title{Interference Temperature }
+\title{Interference Temperature}
 \author{Swrangsar Basumatary \\
 \texttt{swrangsar@iitb.ac.in}}
 \institute{Indian Institute of Technology Bombay}
@@ -20,9 +20,6 @@
 	\item Using this model, \emph{Cognitive Radios} operating in licensed frequency bands would be able to measure their current interference environment and adjust their transmission characteristics so as not to raise the interference temperature over a regulatory limit.
 \end{itemize}
 
-%As of now it is hard to predict if interference temperature is going to be practical because no one has been able to come up with a solution that is agreed upon by everyone. The research on interference temperature was abandoned by the Federal Communications Commission (FCC) in 2007 but there is some hope of a comeback.
-%
-%This document highlights what I have learned about interference temperature as part of my supervised research exposition.
 
 \end{frame}
 
@@ -173,37 +170,6 @@ Though $T_I(f_c,B)$ can be measured easily, inclusion of all signals in its meas
 
 \end{frame}
 
-%The difference between the regulated temperature limit and the measured temperature is the amount of temperature that we are allowed to generate at the receiver. This temperature difference determines how much power our unlicensed transmitter can transmit to comply with the regulations.
-%
-
-%\begin{frame}{IT in terms of bandwidth}
-%
-%The interference temperature $T_I$ can be written in terms of bandwidth $B$ as
-%\begin{align}
-%    T_I(f_c,B) & = \frac{1}{kB}P_I(f_c,B) \nonumber\\
-%    & = \frac{1}{kB}\left(\frac{1}{B}\int_{f_c-B/2}^{f_c+B/2}S(f)df\right) \nonumber\\
-%    & = \frac{1}{B^2k}\int_{f_c-B/2}^{f_c+B/2}S(f)df
-%\end{align}
-%
-%\end{frame}
-
-%The transmit power $P$ satisfying the general model can be found as
-%\begin{align}
-%    T_I(f_c,B) + \frac{MP}{kB} & \leq T_L(f_c) \nonumber \\
-%    \frac{MP}{kB} & \leq T_L(f_c) - T_I(f_c,B) \nonumber \\
-%    P & \leq \frac{kB}{M}T_L(f_c) - \frac{kB}{M}T_I(f_c,B) \nonumber \\
-%    P & \leq \frac{kB}{M}T_L(f_c) - \frac{1}{BM}\int_{f_c-B/2}^{f_c+B/2}S(f)df
-%    \label{maxtransmitpower}
-%\end{align}
-%
-%We cannot find an explicit expression for $B$ satisfying the constraint. But if we consider the special case of $S(f) = c$ where $c$ is some constant, then the inequality \eqref{maxtransmitpower} can be rewritten as,
-%\begin{align}
-%    P & \leq \frac{kB}{M}T_L(f_c) - \frac{c}{M} \nonumber\\
-%    B & \geq \frac{PM + c}{kT_L(f_c)}
-%\end{align}
-%Thus now we have an expression for a minimum transmission bandwidth. Also the maximum transmit power turns out to be $kBT_L(f_c)$. As we increase $B$ the upper bound for transmit power increases. This implies that as we use more bandwidth we can produce more interference.
-%
-%
 \begin{frame}{Spectral analysis of radio signals}
 
 
@@ -216,7 +182,7 @@ Though $T_I(f_c,B)$ can be measured easily, inclusion of all signals in its meas
 	\pause
 	\item Usually the incoming RF stimuli are sectioned into a continuous sequence of successive bursts, with each burst being short enough to justify pseudo-stationarity and yet long enough to produce an accurate spectral estimate.
 	\pause
-	\item A nonparametric spectral estimation method is required for this purpose and \emph{multi-taper spectral estimation} turns out to be the best choice. 
+	\item A nonparametric spectral estimation method is required for this purpose and \emph{multi-taper spectral estimation} turns out to be the best choice\footnote{Simon Haykin, \emph{Cognitive Radio: Brain-Empowered Wireless Communications}, IEEE Journal on selected areas in communications, 2005.}. 
 	\pause
 	\item Multitaper spectral estimation has a nice property of allowing both reduced bias and reduced variance at the same time.
 
@@ -255,8 +221,6 @@ defines the \emph{degrees of freedom} available for controlling the variance of 
 where $\lambda_k$ is the eigenvalue for the $k$th eigenspectrum.
 
 \end{itemize}
-
-% We can improve the spectral estimate by giving low weightage to the eigenspectra with more sidelobe leakage i.e. by choosing smaller $\lambda_k$'s for the higher $k$'s. This is called ``adaptive weighting''. The higher-order eigenspectra contain higher sidelobe leakage so we can weight them less.
 
 \end{frame}
 
@@ -297,8 +261,17 @@ We take the left singular vectors $\mathbf{u}_k(f)$ and the right singular vecto
 
 \end{frame}
 
+\begin{frame}{Conclusion}
 
-\begin{frame}{References}
+\begin{itemize}
+	\item Right now it is hard to predict if interference temperature is going to be practical because no one has been able to come up with a solution that is agreed upon by everyone. The research on interference temperature was abandoned by the Federal Communications Commission (FCC) in 2007 but there is some hope of a comeback.
+	\item This presentation highlights what I have learned about interference temperature as part of my Supervised Research Exposition in the Spring of 2013.
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{References and Sources}
 
 \begin{thebibliography}{10}
 
