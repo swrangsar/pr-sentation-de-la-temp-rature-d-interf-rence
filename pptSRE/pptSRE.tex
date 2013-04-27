@@ -7,7 +7,7 @@
 \author{Swrangsar Basumatary \\
 \texttt{swrangsar@iitb.ac.in}}
 \institute{Indian Institute of Technology Bombay}
-\date{April, 2013}
+\date{April 2013}
 \begin{document}
     \frame{\titlepage}
 
@@ -93,55 +93,90 @@ There is ambiguity regarding whether to represent $T_I$ in terms of the transmit
 
 \end{frame}
 
-%\subsection*{Ideal model}
-%
-%In the ideal model we try to guarantee that
-%\begin{equation}
-%    T_I(f_i,B_i) + \frac{M_iP}{kB_i} \leq T_L(f_i) \qquad \forall \quad 1 \leq i \leq n \label{idealModel}
-%\end{equation}
-%where, $T_L(f_i)$ is the interference temperature limit of the $i$'th receiver at center frequency $f_i$, $T_I(f_i,B_i)$ is  the interference temperature of the $i$'th receiver with center frequency $f_i$ and bandwidth $B_i$, $P$ is the power of the unlicensed transmitter, and $M_i$ is a constant between 0 and 1 representing the attenuation of the  transmitted power $P$ at the $i$'th receiver.
-%
-%In words, equation \eqref{idealModel} means we try to keep the sum of the interference at the receiver (due to all other factors except the unlicensed transmitter) and the interference caused by the unlicensed transmitter's signal below the temperature limit $T_L$. Usually, a unified factor $M$ is used instead of $M_i$'s because we do not know the distance of every receiver. The factor $M$ is fixed by the regulators.
-%
-%\subsubsection*{Challenges in implementing the ideal model}
-%
-%\begin{itemize}
-%    \item It's hard to differentiate between licensed and unlicensed signals unless we already know the coexisting transmitters in the surrounding environment.
-%    \item It's difficult to measure the interference temperature $T_I$ in the presence of a licensed signal. We can determine the noise floor only when there is no signal power. For that we have to know when the signal power is going to be zero if it does. If the signal periodically goes to zero then we can measure the $T_I$ during the interval when it goes to zero. The other way is to take an average of the noise floor just outside the licensed signal band but we need to have information about the licensed signal's properties, like center frequency and bandwidth, to do that.
-%\end{itemize}
-%
-%
-%\subsection*{Generalized model}
-%
-%The generalized model assumes that we have no a priori knowledge about the signal environment. Thus the constraint in this model has to be written in terms of the unlicensed transmitter's parameters.
-%\begin{equation}
-%    T_I(f_c,B) + \frac{MP}{kB} \leq T_L(f_c) \label{generalizedModel}
-%\end{equation}
-%where, $T_L(f_c)$ is the interference temperature limit of the unlicensed transmitter,
-%$T_I(f_c,B)$ is the interference temperature of the unlicensed transmitter, $P$ is the power of the unlicensed transmitter, and $M$ is a constant between 0 and 1 representing the factor by which the transmitted power gets attenuated.
-%
-%If we constrain the transmitted power $P$ to be less than the one in the ideal model, from the equations \eqref{idealModel} and \eqref{generalizedModel} we get the following constraint,
-%\begin{equation}
-%    B(T_L - T_I(f_c,B)) \leq  B_i(T_L - T_I(f_i,B_i)) \qquad \forall \quad 1 \leq i \leq n \label{powerCompare}
-%\end{equation}
-%Suppose, every receiver receives a power $P_i$ and suppose the noise floor for all the receivers is the thermal noise temperature $T_N$, then we can rewrite the above equation \eqref{powerCompare} as,
-%\begin{align}
-%    BT_L - BT_I(f_c,B) & \leq  B_iT_L - B_iT_I(f_i,B_i) \nonumber\\  
-%    BT_L - B_iT_L & \leq BT_I(f_c,B) - B_iT_I(f_i,B_i) \nonumber\\  
-%    T_L(B- B_i) & \leq BT_I(f_c,B) - B_iT_I(f_i,B_i) \nonumber\\  
-%    T_L(B - B_i) + B_iT_I(f_i,B_i) & \leq  BT_I(f_c,B) \nonumber\\
-%    kBT_L(B - B_i) + kBB_iT_I(f_i,B_i) & \leq kB^2T_I(f_c,B) \nonumber\\  
-%    kBT_L(f_c)(B-B_i) + kBT_N\sum_{j=1}^{N}B_j & \leq \sum_{j=1}^{N}B_jP_j \qquad \forall \quad 1 \leq i\leq n
-%\end{align}
-%
-%Though $T_I(f_c,B)$ can be measured easily, inclusion of all signals in its measurement gives rise to a more complex interference environment.
-%
-%
-%\section{Properties of the Interference Temperature}
-%
-%The problem with Interference Temperature model is that it is too simple. It tries to quantify interference assuming that interference behaves like noise. But interference doesn't actually behave like noise because interference includes all other signals other than the one from the licensed transmitter. We are defining interference to be that way. So, \emph{Interference Temperature} can't really model interference well enough.
-%
+\begin{frame}{Ideal model}
+
+In the ideal model we try to guarantee that
+\begin{equation}
+    T_I(f_i,B_i) + \frac{M_iP}{kB_i} \leq T_L(f_i) \qquad \forall \quad 1 \leq i \leq n \label{idealModel}
+\end{equation}
+where
+
+\pause
+\begin{itemize}
+	
+	\item $T_I(f_i,B_i)$ is  the interference temperature of the $i$'th receiver with center frequency $f_i$ and bandwidth $B_i$
+	\item $P$ is the power of the unlicensed transmitter
+	\item $M_i$ is a constant between 0 and 1 representing the attenuation of the  transmitted power $P$ at the $i$'th receiver, and
+	\item $T_L(f_i)$ is the interference temperature limit of the $i$'th receiver at center frequency $f_i$.
+\end{itemize}
+
+\pause
+Usually, a unified factor $M$ is used instead of $M_i$'s because we do not know the distance of every receiver. The factor $M$ is fixed by the regulators.
+
+\end{frame}
+
+\begin{frame}{Challenges in implementing the ideal model}
+
+\begin{itemize}
+    \item Hard to differentiate between licensed and unlicensed signals unless we already know the coexisting transmitters in the surrounding environment.
+    \item Difficult to measure the interference temperature $T_I$ in the presence of a licensed signal. \begin{itemize}
+    \item We can determine the noise floor only when there is no signal power. For that we have to know when the signal power is going to be zero if it does. If the signal periodically goes to zero then we can measure the $T_I$ during the interval when it goes to zero. 
+    \item The other way is to take an average of the noise floor just outside the licensed signal band, but we need to have information about the licensed signal's properties, like center frequency and bandwidth, to do that.
+    \end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Generalized model}
+
+The generalized model assumes that we have no a priori knowledge about the signal environment. Thus the constraint in this model has to be written in terms of the unlicensed transmitter's parameters.
+\begin{equation}
+    T_I(f_c,B) + \frac{MP}{kB} \leq T_L(f_c) \label{generalizedModel}
+\end{equation}
+where
+\pause
+\begin{itemize}
+	\item $T_L(f_c)$ is the interference temperature limit of the unlicensed transmitter,
+	\item $T_I(f_c,B)$ is the interference temperature of the unlicensed transmitter, 
+	\item $P$ is the power of the unlicensed transmitter, and
+	\item $M$ is a constant between 0 and 1 representing the factor by which the transmitted power gets attenuated.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Generalized model (continued)}
+
+\begin{itemize}
+\item If we constrain the transmitted power $P$ to be less than that in the ideal model, from the equations \eqref{idealModel} and \eqref{generalizedModel} we get the following constraint,
+\begin{equation*}
+    B(T_L - T_I(f_c,B)) \leq  B_i(T_L - T_I(f_i,B_i)) \qquad \forall \quad 1 \leq i \leq n \label{powerCompare}
+\end{equation*}
+If every receiver receives a power $P_i$ and if the noise floor is the thermal noise temperature $T_N$, then we can rewrite the above equation as,
+\begin{align*}
+    kBT_L(f_c)(B-B_i) + kBT_N\sum_{j=1}^{N}B_j & \leq \sum_{j=1}^{N}B_jP_j \qquad \forall \quad 1 \leq i\leq n
+\end{align*}
+
+\pause
+\item
+Though $T_I(f_c,B)$ can be measured easily, inclusion of all signals in its measurement gives rise to a more complex interference environment.
+
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Properties of Interference Temperature}
+
+\emph{The problem with Interference Temperature model is that it is too simple}. It tries to quantify interference assuming that interference behaves like noise. But interference doesn't actually behave like noise because interference includes all signals other than the one from the licensed transmitter. We are defining interference that way. So, \emph{Interference Temperature} can't really model interference well enough.
+
+\end{frame}
+
 %The difference between the regulated temperature limit and the measured temperature is the amount of temperature that we are allowed to generate at the receiver. This temperature difference determines how much power our unlicensed transmitter can transmit to comply with the regulations.
+%
+
+%\begin{frame}{IT in terms of bandwidth}
 %
 %The interference temperature $T_I$ can be written in terms of bandwidth $B$ as
 %\begin{align}
@@ -150,6 +185,8 @@ There is ambiguity regarding whether to represent $T_I$ in terms of the transmit
 %    & = \frac{1}{B^2k}\int_{f_c-B/2}^{f_c+B/2}S(f)df
 %\end{align}
 %
+%\end{frame}
+
 %The transmit power $P$ satisfying the general model can be found as
 %\begin{align}
 %    T_I(f_c,B) + \frac{MP}{kB} & \leq T_L(f_c) \nonumber \\
@@ -167,13 +204,25 @@ There is ambiguity regarding whether to represent $T_I$ in terms of the transmit
 %Thus now we have an expression for a minimum transmission bandwidth. Also the maximum transmit power turns out to be $kBT_L(f_c)$. As we increase $B$ the upper bound for transmit power increases. This implies that as we use more bandwidth we can produce more interference.
 %
 %
-%\section{Spectral analysis of radio signals}
-%
-%The stimuli generated by radio emitters are nonstationary signals that depend on both time and space. But statistical analysis of nonstationary signals is complicated and cannot be implemented efficiently in practice. So, usually the incoming RF stimuli are sectioned into a continuous sequence of successive bursts, with each burst being short enough to justify pseudo-stationarity and yet long enough to produce an accurate spectral estimate\cite{haykin2005}.
-%
-%
-%A nonparametric spectral estimation method is required for this purpose and \emph{multitaper spectral estimation}\cite{thomson1982, percival1993} turns out to be the best choice. Multitaper spectral estimation has a nice property of allowing both reduced bias and reduced variance at the same time.
-%
+\begin{frame}{Spectral analysis of radio signals}
+
+
+\begin{itemize}
+
+	\pause
+	\item The stimuli generated by radio emitters are non-stationary signals that depend on both time and space.
+	\pause
+	\item But statistical analysis of non-stationary signals is complicated and cannot be implemented efficiently in practice. 
+	\pause
+	\item So, usually the incoming RF stimuli are sectioned into a continuous sequence of successive bursts, with each burst being short enough to justify pseudo-stationarity and yet long enough to produce an accurate spectral estimate.
+	\pause
+	\item A nonparametric spectral estimation method is required for this purpose and \emph{multi-taper spectral estimation} turns out to be the best choice. 
+	\pause
+	\item Multitaper spectral estimation has a nice property of allowing both reduced bias and reduced variance at the same time.
+
+\end{itemize}
+\end{frame}
+
 %\subsection*{Multitaper spectral estimation}
 %This method uses \emph{multiple orthonormal tapers}\cite{thomson1982} to give different estimates of the spectrum. These estimates are then averaged to give the final estimate. This final estimate turns out to have both reduced bias and reduced variance\cite{thomson1982, percival1993}.
 %
