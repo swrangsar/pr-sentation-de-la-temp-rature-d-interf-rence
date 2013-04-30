@@ -22,7 +22,7 @@
 	\pause
 	\item The concept of interference temperature was introduced by the FCC as a new metric for quantifying and managing interference.
 	\pause
-	\item Using this model, \emph{Cognitive Radios} operating in licensed frequency bands would be able to measure their current interference environment and adjust their transmission characteristics so as not to raise the interference temperature over a regulatory limit.
+	\item Using this model, \emph{Cognitive Radios} operating in licensed frequency bands would be able to measure their current interference environment and adjust their transmission characteristics so as not to raise the interference temperature over a limit set by the regulators.
 \end{itemize}
 
 \end{frame}
@@ -130,9 +130,7 @@ where
 \end{itemize}
 
 \pause
-Usually, a unified factor $M$ is used instead of $M_i$'s because we do not know the distance of every receiver. The factor $M$ is fixed by the regulators.
-
-\end{frame}
+Usually, a unified factor $M$ (set by regulators) is used instead of $M_i$'s because we do not know the distance of every receiver. \end{frame}
 
 
 
@@ -200,7 +198,7 @@ Though $T_I(f_c,B)$ can be measured easily, inclusion of all signals in its meas
 
 \begin{frame}{Properties of Interference Temperature}
 
-\emph{The problem with Interference Temperature model is that it is too simple}. It tries to quantify interference assuming it to behave like noise. But interference doesn't actually behave like noise because we have defined interference to include all signals other than the one from the licensed transmitter. So, \emph{Interference Temperature} can't model interference well enough.
+\emph{The problem with Interference Temperature model is that it is too simple}. It tries to quantify interference assuming it to behave like noise. But interference doesn't actually behave like noise because we have defined interference to include all signals other than the one from the licensed transmitter. Thus, \emph{Interference Temperature} can't model interference well enough.
 
 \end{frame}
 
@@ -219,7 +217,7 @@ Though $T_I(f_c,B)$ can be measured easily, inclusion of all signals in its meas
 	\pause
 	\item Usually the incoming RF stimuli are sectioned into a continuous sequence of successive bursts, with each burst being short enough to justify pseudo-stationarity and yet long enough to produce an accurate spectral estimate.
 	\pause
-	\item A nonparametric spectral estimation method is required for this purpose and \emph{multi-taper spectral estimation} turns out to be the best choice\footnote{Simon Haykin, D J Thomson and J H Reed, \emph{Spectrum Sensing for Cognitive Radio}, Proceedings of the IEEE, Vol. 97, No. 5, May 2009.}. 
+	\item A nonparametric spectral estimation method is required for this purpose and \emph{multi-taper spectral estimation} turns out to be the best choice\footnote{Simon Haykin, David J Thomson and Jeffrey H Reed, \emph{Spectrum Sensing for Cognitive Radio}, Proceedings of the IEEE, Vol. 97, No. 5, May 2009.}. 
 	\pause
 	\item Multitaper spectral estimation has a nice property of allowing both reduced bias and reduced variance at the same time.
 
@@ -325,7 +323,7 @@ We take the left singular vectors $\mathbf{u}_k(f)$ and the right singular vecto
 
 \begin{itemize}
 	\item Right now it is hard to predict if interference temperature is going to be practical because no one has been able to come up with a solution that is agreed upon by everyone. The research on interference temperature was abandoned by the Federal Communications Commission (FCC) in 2007 but there is some hope of a comeback.
-	\item This presentation highlights what I have learned about interference temperature as part of my Supervised Research Exposition in the Spring of 2013.
+	\item This presentation highlights what I have learned about \emph{interference temperature} as part of my Supervised Research Exposition in the Spring of 2013.
 
 \end{itemize}
 \end{frame}
@@ -333,12 +331,12 @@ We take the left singular vectors $\mathbf{u}_k(f)$ and the right singular vecto
 
 
 
-\begin{frame}{References}
-
+\begin{frame}[allowframebreaks]
+	\frametitle<presentation>{References}
 \begin{thebibliography}{10}
 
 \bibitem{clancy2006}
-	T. Charles Clancy
+    T. Charles Clancy
     \newblock \emph{Formalizing the Interference Temperature Model},
     \newblock Wiley Journal on wireless communications and mobile computing, 2006.
 
@@ -347,15 +345,25 @@ We take the left singular vectors $\mathbf{u}_k(f)$ and the right singular vecto
     \newblock  \emph{Cognitive Radio: Brain-Empowered Wireless Communications},
     \newblock IEEE Journal on selected areas in communications, 2005.
 
+\bibitem{haykin2009}
+    Simon Haykin, D J Thomson and J H Reed
+    \newblock \emph{Spectrum Sensing for Cognitive Radio}
+    \newblock Proceedings of the IEEE, May 2009.
+
 \bibitem{kolodzy2006}
     Paul J Kolodzy
     \newblock \emph{Interference Temperature: A Metric for Dynamic Spectrum Utilization},
     \newblock International Journal of Network Management, 2006.
 
-\bibitem{haykin2009}
-    Simon Haykin, D J Thomson and J H Reed
-    \newblock \emph{Spectrum Sensing for Cognitive Radio}
-    \newblock Proceedings of the IEEE, May 2009.
+\bibitem{thomson1982}
+    David J Thomson
+    \newblock \emph{Spectrum estimation and harmonic analysis}
+    \newblock Proceedings of the IEEE, 1982.
+
+\bibitem{percival1993}
+    D B Percival and A T Walden
+    \newblock \emph{Spectral Analysis for Physical Applications}
+    \newblock Cambridge University Press, 1993.
 
 \end{thebibliography}
 

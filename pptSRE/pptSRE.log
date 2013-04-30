@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.1.11)  30 APR 2013 08:45
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.1.11)  30 APR 2013 11:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -938,17 +938,17 @@ Package pdftex.def Info: interferenceTemperatureModels.png used on input line 1
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 245.
+(Font)              using `OT1/cmss/bx/n' instead on input line 243.
 
 [31
 
 ] <DPSS_figure.jpg, id=842, 385.44pt x 289.08pt>
 File: DPSS_figure.jpg Graphic file (type jpg)
  <use DPSS_figure.jpg>
-Package pdftex.def Info: DPSS_figure.jpg used on input line 257.
+Package pdftex.def Info: DPSS_figure.jpg used on input line 255.
 (pdftex.def)             Requested size: 219.39137pt x 164.54381pt.
 
-Overfull \vbox (2.96793pt too high) detected at line 257
+Overfull \vbox (2.96793pt too high) detected at line 255
  []
 
 [32
@@ -966,7 +966,10 @@ Overfull \vbox (2.96793pt too high) detected at line 257
 ] [38
 
  </usr/local/texlive/2012/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf
->]
+>] [39
+
+
+]
 \tf@nav=\write6
 \openout6 = `pptSRE.nav'.
 
@@ -976,11 +979,11 @@ Overfull \vbox (2.96793pt too high) detected at line 257
 \tf@snm=\write8
 \openout8 = `pptSRE.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 364.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 364.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 372.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 372.
  (./pptSRE.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 364.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 364.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 372.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 372.
 Package rerunfilecheck Info: File `pptSRE.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -991,13 +994,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 364.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 372.
  ) 
 Here is how much of TeX's memory you used:
- 15822 strings out of 493488
- 298802 string characters out of 3141326
- 370693 words of memory out of 3000000
- 18655 multiletter control sequences out of 15000+200000
+ 15843 strings out of 493488
+ 299375 string characters out of 3141326
+ 370750 words of memory out of 3000000
+ 18672 multiletter control sequences out of 15000+200000
  15061 words of font info for 56 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,16n,57p,415b,557s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1017,10 +1020,10 @@ exlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
 ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on pptSRE.pdf (38 pages, 325716 bytes).
+Output written on pptSRE.pdf (39 pages, 327795 bytes).
 PDF statistics:
- 1104 PDF objects out of 1200 (max. 8388607)
- 1018 compressed objects within 11 object streams
- 84 named destinations out of 1000 (max. 500000)
+ 1132 PDF objects out of 1200 (max. 8388607)
+ 1045 compressed objects within 11 object streams
+ 88 named destinations out of 1000 (max. 500000)
  101 words of extra memory for PDF output out of 10000 (max. 10000000)
 
